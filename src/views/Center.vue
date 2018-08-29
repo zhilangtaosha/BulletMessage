@@ -5,27 +5,42 @@
     <button class="more">...</button>
   </nav>
   <ul>
-    <li>账号</li>
+    <li @click="go('account')">账号</li>
   </ul>
   <ul>
-    <li>账号与安全</li>
-    <li>通知管理</li>
-    <li>聊天管理</li>
-    <li>快捷发送消息设置</li>
+    <li @click="go('safe')">账号与安全</li>
+    <li @click="go('noti')">通知管理</li>
+    <li @click="go('chat')">聊天管理</li>
+    <li @click="go('send')">快捷发送消息设置</li>
   </ul>
   <ul>
-    <li>设置</li>
+    <li @click="go('setting')">设置</li>
   </ul>
+  <transition :name="transitionName">
+    <router-view></router-view>
+  </transition>
 </div>
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Watch, Vue } from 'vue-property-decorator'
 
 @Component({
-
 })
 export default class Talk extends Vue {
+  private transitionName: string = 'pop'
+  @Watch('$route')
+  onPathChanged(to: { path: string }, from: { path: string }) {
+    const toDepth = to.path.split('/').length
+    const fromDepth = from.path.split('/').length
+    if(to.path === '/') this.transitionName = 'pop'
+    else if(from.path === '/') this.transitionName = 'push'
+    else this.transitionName = toDepth > fromDepth ? 'push' : 'pop'
+  }
+  private go(path: string): void {
+    console.log(path)
+    this.$router.push(`/center/${path}`)
+  }
 
 }
 </script>

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Talk from './views/Talk.vue';
+import Empty from './views/Empty.vue';
 import All from './components/talk/All.vue';
 import Late from './components/talk/Late.vue';
 
@@ -9,8 +10,7 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'talk',
+      path: '',
       alias: '/talk',
       component: Talk,
       children: [
@@ -29,7 +29,6 @@ export default new Router({
     },
     {
       path: '/friend',
-      name: 'friend',
       component: () => import(/* webpackChunkName: "friend" */ './views/Friend.vue'),
       children: [
         {
@@ -52,7 +51,6 @@ export default new Router({
     },
     {
       path: '/news',
-      name: 'news',
       component: () => import(/* webpackChunkName: "news" */ './views/News.vue'),
       children: [
         {
@@ -70,13 +68,48 @@ export default new Router({
     },
     {
       path: '/collection',
-      name: 'collection',
       component: () => import(/* webpackChunkName: "collection" */ './views/Collection.vue'),
     },
     {
       path: '/center',
-      name: 'center',
       component: () => import(/* webpackChunkName: "center" */ './views/Center.vue'),
+      children: [
+        {
+          path: '',
+          name: 'center-empty',
+          component: Empty,
+        },
+        {
+          path: 'account',
+          name: 'center-account',
+          component: () => import(/* webpackChunkName: "center-account" */ './views/center/Account.vue'),
+        },
+        {
+          path: 'safe',
+          name: 'center-safe',
+          component: () => import(/* webpackChunkName: "center-safe" */ './views/center/Safe.vue'),
+        },
+        {
+          path: 'noti',
+          name: 'center-noti',
+          component: () => import(/* webpackChunkName: "center-noti" */ './views/center/Noti.vue'),
+        },
+        {
+          path: 'chat',
+          name: 'center-chat',
+          component: () => import(/* webpackChunkName: "center-chat" */ './views/center/Chat.vue'),
+        },
+        {
+          path: 'send',
+          name: 'center-send',
+          component: () => import(/* webpackChunkName: "center-send" */ './views/center/Send.vue'),
+        },
+        {
+          path: 'setting',
+          name: 'center-setting',
+          component: () => import(/* webpackChunkName: "center-setting" */ './views/center/Setting.vue'),
+        },
+      ]
     },
   ],
 });

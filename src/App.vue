@@ -12,7 +12,9 @@
 </template>
 
 <style lang="less">
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
   margin: 0;
 }
@@ -26,13 +28,14 @@ html, body, #app {
 
   @navHeight: 64px;
 
-  &>div {
+  & > div {
     height: calc(100% - @navHeight);
   }
 
   #nav {
     display: grid;
     grid-template-columns: repeat(5, 20%);
+    height: 64px;
     background: white;
     a {
       line-height: @navHeight;
@@ -44,49 +47,101 @@ html, body, #app {
       }
     }
   }
-}
 
-.nav {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  height: 64px;
-  background: blue;
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 64px;
+    background: blue;
 
-  .row-position {
-    grid-row: e('2 / 3');
+    .row-position {
+      grid-row: e('2 / 3');
+    }
+
+    .ctrls {
+      grid-column: e('1 / 4');
+      .row-position;
+    }
+    .funcs {
+      grid-column: e('4 / 8');
+      .row-position;
+    }
+    .more {
+      grid-column: e('9 / 11');
+      .row-position;
+    }
   }
 
-  .ctrls {
-    grid-column: e('1 / 4');
-    .row-position;
-  }
-  .funcs {
-    grid-column: e('4 / 8');
-    .row-position;
-  }
-  .more {
-    grid-column: e('9 / 11');
-    .row-position;
-  }
-}
-
-.search {
-  height: 40px;
-  background: grey;
-
-  .search-input {
-    position: relative;
-    width: 90%;
-    height: 32px;
-  }
-}
-
-.device {
-  .manager {
-    width: 100%;
-    margin: auto 0;
+  .search {
     height: 40px;
+    background: grey;
+
+    .search-input {
+      position: relative;
+      width: 90%;
+      height: 32px;
+    }
   }
+
+  .device {
+    .manager {
+      width: 100%;
+      margin: auto 0;
+      height: 40px;
+    }
+  }
+
+  .sub-page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+
+    .back {
+      grid-column: e('1 / 3');
+      grid-row: e('2 / 3');
+    }
+  }
+}
+
+.push-enter {
+  transform: translateX(100%);
+}
+.push-enter-active {
+  transition: transform 0.3s ease;
+}
+.push-enter-to,
+.push-leave {
+  transform: translateX(0);
+  opacity: 1;
+}
+.push-leave-to {
+  transform: translateX(-100%);
+  opacity: 0.8;
+}
+.push-leave-active {
+  transition: transform 0.3s ease;
+}
+.pop-enter {
+  transform: translateX(-100%);
+}
+.pop-enter-active {
+  transition: transform 0.3s ease;
+}
+.pop-enter-to,
+.pop-leave {
+  transform: translateX(0);
+  opacity: 1;
+}
+.pop-leave-to {
+  transform: translateX(100%);
+  opacity: 0.8;
+}
+
+.pop-leave-active {
+  transition: transform 0.3s ease;
 }
 </style>
