@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["news-penguin"],{1391:function(n,e,i){},"47bd":function(n,e,i){"use strict";var t=i("1391"),s=i.n(t);s.a},"58c9":function(n,e,i){"use strict";i.r(e);var t=function(){var n=this,e=n.$createElement,i=n._self._c||e;return i("div",{staticClass:"penguin"},[n._v("\n  this is penguin.\n")])},s=[],u={},c=u,a=(i("47bd"),i("2877")),l=Object(a["a"])(c,t,s,!1,null,null,null);l.options.__file="Penguin.vue";e["default"]=l.exports}}]);
+//# sourceMappingURL=news-penguin.b3418b1d.js.map

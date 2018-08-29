@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["friend-late"],{3767:function(t,n,s){},5816:function(t,n,s){"use strict";var e=s("3767"),i=s.n(e);i.a},7041:function(t,n,s){"use strict";s.r(n);var e=function(){var t=this,n=t.$createElement,s=t._self._c||n;return s("div",{staticClass:"star"},[t._v("\n  this is star.\n")])},i=[],a={},r=a,u=(s("5816"),s("2877")),c=Object(u["a"])(r,e,i,!1,null,null,null);c.options.__file="Star.vue";n["default"]=c.exports}}]);
+//# sourceMappingURL=friend-late.ccfc5899.js.map

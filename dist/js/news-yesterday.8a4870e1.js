@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["news-yesterday"],{3225:function(e,t,n){"use strict";var s=n("d499"),a=n.n(s);a.a},"36f3":function(e,t,n){"use strict";n.r(t);var s=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"yesterday"},[e._v("\n  this is yesterday.\n")])},a=[],i={},r=i,u=(n("3225"),n("2877")),c=Object(u["a"])(r,s,a,!1,null,null,null);c.options.__file="Yesterday.vue";t["default"]=c.exports},d499:function(e,t,n){}}]);
+//# sourceMappingURL=news-yesterday.8a4870e1.js.map

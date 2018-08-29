@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["friend-all"],{6393:function(n,l,t){"use strict";t.r(l);var e=function(){var n=this,l=n.$createElement,t=n._self._c||l;return t("div",{staticClass:"all"},[n._v("\n  this is all.\n")])},i=[],s={},a=s,f=(t("86f1"),t("2877")),u=Object(f["a"])(a,e,i,!1,null,null,null);u.options.__file="All.vue";l["default"]=u.exports},"86f1":function(n,l,t){"use strict";var e=t("f9ef"),i=t.n(e);i.a},f9ef:function(n,l,t){}}]);
+//# sourceMappingURL=friend-all.120bece6.js.map
