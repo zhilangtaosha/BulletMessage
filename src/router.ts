@@ -1,12 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Talk from './views/Talk.vue';
-import All from './components/All.vue';
-import Late from './components/Late.vue';
-import Friend from './views/Friend.vue';
-import News from './views/News.vue';
-import Collection from './views/Collection.vue';
-import Center from './views/Center.vue';
+import All from './components/talk/All.vue';
+import Late from './components/talk/Late.vue';
 
 Vue.use(Router);
 
@@ -20,13 +16,13 @@ export default new Router({
       children: [
         {
           path: '',
-          name: 'all',
+          name: 'talk-all',
           alias: 'all',
           component: All,
         },
         {
           path: 'late',
-          name: 'late',
+          name: 'talk-late',
           component: Late,
         },
       ],
@@ -35,11 +31,42 @@ export default new Router({
       path: '/friend',
       name: 'friend',
       component: () => import(/* webpackChunkName: "friend" */ './views/Friend.vue'),
+      children: [
+        {
+          path: '',
+          name: 'friend-all',
+          alias: 'all',
+          component: () => import(/* webpackChunkName: "friend-all" */ './components/friend/All.vue'),
+        },
+        {
+          path: 'star',
+          name: 'friend-star',
+          component: () => import(/* webpackChunkName: "friend-late" */ './components/friend/Star.vue'),
+        },
+        {
+          path: 'new',
+          name: 'friend-new',
+          component: () => import(/* webpackChunkName: "friend-new" */ './components/friend/New.vue'),
+        },
+      ]
     },
     {
       path: '/news',
       name: 'news',
       component: () => import(/* webpackChunkName: "news" */ './views/News.vue'),
+      children: [
+        {
+          path: '',
+          name: 'news-yesterday',
+          alias: 'yesterday',
+          component: () => import(/* webpackChunkName: "news-yesterday" */ './components/news/Yesterday.vue'),
+        },
+        {
+          path: 'penguin',
+          name: 'news-penguin',
+          component: () => import(/* webpackChunkName: "news-penguin" */ './components/news/Penguin.vue'),
+        },
+      ],
     },
     {
       path: '/collection',

@@ -22,22 +22,71 @@ html, body, #app {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: #eee;
+
+  @navHeight: 64px;
 
   &>div {
-    height: calc(100% - 40px);
+    height: calc(100% - @navHeight);
+  }
+
+  #nav {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    background: white;
+    a {
+      line-height: @navHeight;
+      font-weight: bold;
+      color: #2c3e50;
+      text-decoration: none;
+      &.router-link-exact-active {
+        color: #42b983;
+      }
+    }
   }
 }
-#nav {
+
+.nav {
   display: grid;
-  grid-template-columns: repeat(5, 20%);
-  a {
-    line-height: 40px;
-    font-weight: bold;
-    color: #2c3e50;
-    text-decoration: none;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 64px;
+  background: blue;
+
+  .row-position {
+    grid-row: e('2 / 3');
+  }
+
+  .ctrls {
+    grid-column: e('1 / 4');
+    .row-position;
+  }
+  .funcs {
+    grid-column: e('4 / 8');
+    .row-position;
+  }
+  .more {
+    grid-column: e('9 / 11');
+    .row-position;
+  }
+}
+
+.search {
+  height: 40px;
+  background: grey;
+
+  .search-input {
+    position: relative;
+    width: 90%;
+    height: 32px;
+  }
+}
+
+.device {
+  .manager {
+    width: 100%;
+    margin: auto 0;
+    height: 40px;
   }
 }
 </style>

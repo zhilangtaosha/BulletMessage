@@ -32,54 +32,11 @@ export default class Talk extends Vue {
   private beLate = false
   private clickFunc(): void {
     this.beLate = !this.beLate
-    if(this.beLate) this.$router.push('/talk/late')
+    if (this.beLate) this.$router.push('/talk/late')
     else this.$router.push('/talk/all')
   }
 }
 </script>
 
 <style lang='less' scoped>
-.nav {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  height: 64px;
-  background: blue;
-
-  .row-position {
-    grid-row: e('2 / 3');
-  }
-
-  .ctrls {
-    grid-column: e('1 / 4');
-    .row-position;
-  }
-  .funcs {
-    grid-column: e('4 / 8');
-    .row-position;
-  }
-  .more {
-    grid-column: e('9 / 11');
-    .row-position;
-  }
-}
-
-.search {
-  height: 40px;
-  background: grey;
-
-  .search-input {
-    position: relative;
-    width: 90%;
-    height: 32px;
-  }
-}
-
-.device {
-  .manager {
-    width: 100%;
-    margin: auto 0;
-    height: 40px;
-  }
-}
 </style>
